@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "rootDir": "./src",
+    "rootDir": "server/src",
     "outDir": "./dist",
     "target": "esnext",
     "module": "commonjs",
@@ -20,9 +20,9 @@
     "paths": {
       "*": ["types/*"]
     },
-    "typeRoots": ["node_modules/@types", "src/@types"],
+    "typeRoots": ["node_modules/@types", "server/src/@types"],
   },
-  "files": ["src/graphql.d.ts"],
-  "include": ["src/**/*"],
+  "files": ["server/src/graphql.d.ts"],
+  "include": ["server/src/**/*"],
   "exclude": ["codegen.ts", "dist"]
 }

@@ -1,0 +1,29 @@
+type Post {
+  id: ID!
+  title: String!
+  content: String!
+  author: User!
+  tags: [String!]!
+  createdAt: String
+  updatedAt: String
+}
+
+extend type Query {
+  posts: [Post!]!
+  post(id: ID!): Post
+  postsByAuthor(author: ID!): [Post!]!
+  postsByTag(tag: String!): [Post!]!
+  searchPosts(query: String!): [Post!]!
+  recentPosts(limit: Int = 5): [Post!]!
+  popularPosts(limit: Int = 5): [Post!]!
+  postsByDateRange(startDate: String!, endDate: String!): [Post!]
+  postsByKeyword(keyword: String!): [Post!]!
+  postsByTitle(title: String!): [Post!]!
+  postsByContent(content: String!): [Post!]!
+}
+
+extend type Mutation {
+  createPost(title: String!, content: String!, tags: [String!]!): Post!
+  updatePost(id: ID!, title: String, content: String): Post!
+  deletePost(id: ID!): Boolean!
+}
